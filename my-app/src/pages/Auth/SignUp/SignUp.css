@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+.signup-page .auth-intro {
+	background-image: radial-gradient(circle at 20% 80%, rgba(255, 84, 112, 0.24), transparent 35%), linear-gradient(145deg, #171525 20%, #30243d 100%);
+}
+
+.signup-page .auth-back-button { display: inline-flex; gap: 8px; align-items: center; margin-bottom: 34px; padding: 0; border: 0; color: #777184; background: none; font: 600 0.88rem 'DM Sans', sans-serif; cursor: pointer; }
+.signup-page .auth-back-button:hover { color: #7c5cff; }
+.signup-page .auth-back-button span { font-size: 1.2rem; line-height: 1; }
+.signup-page .auth-form { gap: 10px; }
