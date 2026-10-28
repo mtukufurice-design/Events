@@ -1,6 +1,7 @@
 import './AdminDashboard.css'
+import ThemeToggle from '../../components/ThemeToggle'
 
-function AdminDashboard({ account, onLogout }) {
+function AdminDashboard({ account, onLogout, theme, onToggleTheme }) {
   const displayName = account?.email?.split('@')[0] || 'Administrator'
 
   return (
@@ -23,7 +24,10 @@ function AdminDashboard({ account, onLogout }) {
       <section className="admin-main" id="overview">
         <header className="admin-topbar">
           <div><span className="admin-breadcrumb">Workspace /</span> Overview</div>
-          <button className="admin-logout" type="button" onClick={onLogout}>Log out <span aria-hidden="true">↗</span></button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} compact={true} />
+            <button className="admin-logout" type="button" onClick={onLogout}>Log out <span aria-hidden="true">↗</span></button>
+          </div>
         </header>
 
         <div className="admin-content">

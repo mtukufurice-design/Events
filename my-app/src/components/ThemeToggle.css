@@ -1,0 +1,98 @@
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #d8e2eb;
+  color: #35251b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.theme-toggle-indicators {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-indicator-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.theme-indicator-dot.blue {
+  background: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.9);
+}
+
+.theme-indicator-dot.red {
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.9);
+}
+
+.theme-indicator-dot.warm {
+  background: #f59e0b;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+}
+
+.theme-toggle-text {
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.theme-toggle-tag {
+  font-size: 0.65rem;
+  padding: 2px 7px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: #edf2f7;
+  color: #4a5568;
+  white-space: nowrap;
+}
+
+/* Black & Blue with Red styling */
+[data-theme='black-blue-red'] .theme-toggle-btn {
+  background: rgba(13, 21, 39, 0.85);
+  border: 1px solid rgba(59, 130, 246, 0.45);
+  color: #f1f5f9;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2), inset 0 0 10px rgba(37, 99, 235, 0.15);
+}
+
+[data-theme='black-blue-red'] .theme-toggle-btn:hover {
+  border-color: #ef4444;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.35), 0 0 12px rgba(59, 130, 246, 0.25);
+  color: #ffffff;
+}
+
+[data-theme='black-blue-red'] .theme-toggle-btn .theme-toggle-tag {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.35), rgba(239, 68, 68, 0.35));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+}
+
+.theme-toggle-btn.is-compact .theme-toggle-text,
+.theme-toggle-btn.is-compact .theme-toggle-tag {
+  display: none;
+}
+

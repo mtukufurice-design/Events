@@ -1,6 +1,7 @@
 import './LandingPage.css'
-
-function LandingPage({ onNavigate }) {
+import ThemeToggle from '../../components/ThemeToggle'
+import DepthCarousel from '../../components/DepthCarousel'
+function LandingPage({ onNavigate, theme, onToggleTheme }) {
   return (
     <div className="landing-page">
 
@@ -14,20 +15,22 @@ function LandingPage({ onNavigate }) {
           </div>
 
           <nav className="landing-nav">
-            <a href="#home">Home</a>
-            <a href="#events">Events</a>
-            <a href="#categories">Categories</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#home">Start</a>
+            <a href="#events">Discover</a>
+            <a href="#categories">Browse by Type</a>
+            <a href="#about">Our Story</a>
+            <a href="#contact">Get in Touch</a>
           </nav>
 
           <div className="navbar-actions">
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+
             <button className="login-button" onClick={() => onNavigate('login')}>
-              Login
+              Sign In
             </button>
 
             <button className="create-event-button" onClick={() => onNavigate('signup')}>
-              Create Event
+              Host an Event
             </button>
           </div>
 
@@ -46,29 +49,27 @@ function LandingPage({ onNavigate }) {
 
               <div className="hero-badge">
                 <span>●</span>
-                Discover amazing events
+                Meet the people who inspire you
               </div>
 
               <h1>
-                Experience Events
-                <span> Like Never Before.</span>
+                Make Every Event
+                <span> an Unforgettable Experience.</span>
               </h1>
 
               <p>
-                Discover, create and manage unforgettable events
-                all in one place. From conferences and concerts
-                to workshops and social gatherings.
+                Plan your next outing, discover inspiring gatherings, and organize conferences, concerts, workshops, and more—all in one place.
               </p>
 
               <div className="hero-buttons">
 
                 <button className="hero-primary-button">
-                  Explore Events
+                  Browse Events
                   <span>→</span>
                 </button>
 
                 <button className="hero-secondary-button">
-                  Create an Event
+                  Organize an Event
                 </button>
 
               </div>
@@ -84,7 +85,7 @@ function LandingPage({ onNavigate }) {
 
                 <div>
                   <strong>10,000+</strong>
-                  <p>Event attendees</p>
+                  <p>People attending events</p>
                 </div>
 
               </div>
@@ -100,7 +101,7 @@ function LandingPage({ onNavigate }) {
                 <div className="hero-card-image">
                   <div className="hero-card-overlay">
                     <span className="featured-label">
-                      FEATURED EVENT
+                      EVENT SPOTLIGHT
                     </span>
                   </div>
                 </div>
@@ -113,7 +114,7 @@ function LandingPage({ onNavigate }) {
                   </div>
 
                   <div className="hero-event-details">
-                    <p>Technology</p>
+                    <p>Tech & Innovation</p>
                     <h3>
                       Africa Tech Innovation Summit
                     </h3>
@@ -129,14 +130,14 @@ function LandingPage({ onNavigate }) {
 
                   <div>
                     <span className="small-label">
-                      STARTING FROM
+                      TICKETS FROM
                     </span>
 
                     <strong>KSh 1,500</strong>
                   </div>
 
                   <button>
-                    View Event
+                    See Event
                   </button>
 
                 </div>
@@ -152,8 +153,8 @@ function LandingPage({ onNavigate }) {
                 </div>
 
                 <div>
-                  <strong>Registration Confirmed</strong>
-                  <p>Your event ticket is ready</p>
+                  <strong>You're all registered</strong>
+                  <p>Your ticket is ready to use</p>
                 </div>
 
               </div>
@@ -163,7 +164,6 @@ function LandingPage({ onNavigate }) {
           </div>
 
         </section>
-
 
         {/* ================= CATEGORIES ================= */}
         <section
@@ -177,17 +177,17 @@ function LandingPage({ onNavigate }) {
 
               <div>
                 <span className="section-label">
-                  EXPLORE
+                  FIND YOUR NEXT EXPERIENCE
                 </span>
 
                 <h2>
-                  Find Events You'll Love
+                  Discover Something You'll Enjoy
                 </h2>
               </div>
 
               <p>
-                Explore events across different categories
-                and find something that matches your interests.
+                Browse a range of event styles and choose an experience
+                that suits what you love.
               </p>
 
             </div>
@@ -200,13 +200,13 @@ function LandingPage({ onNavigate }) {
                   🎵
                 </div>
 
-                <h3>Music & Concerts</h3>
+                <h3>Concerts & Music</h3>
 
                 <p>
-                  Live performances and music festivals
+                  Concerts, live shows, and festival days
                 </p>
 
-                <span>120+ Events →</span>
+                <span>120+ Experiences →</span>
               </div>
 
 
@@ -218,10 +218,10 @@ function LandingPage({ onNavigate }) {
                 <h3>Business</h3>
 
                 <p>
-                  Conferences, networking and workshops
+                  Industry meetups, conferences, and learning sessions
                 </p>
 
-                <span>85+ Events →</span>
+                <span>85+ Experiences →</span>
               </div>
 
 
@@ -233,10 +233,10 @@ function LandingPage({ onNavigate }) {
                 <h3>Technology</h3>
 
                 <p>
-                  Tech conferences and innovation events
+                  New ideas, technology talks, and innovation showcases
                 </p>
 
-                <span>65+ Events →</span>
+                <span>65+ Experiences →</span>
               </div>
 
 
@@ -248,10 +248,10 @@ function LandingPage({ onNavigate }) {
                 <h3>Arts & Culture</h3>
 
                 <p>
-                  Art exhibitions and cultural experiences
+                  Creative showcases, exhibitions, and cultural events
                 </p>
 
-                <span>45+ Events →</span>
+                <span>45+ Experiences →</span>
               </div>
 
             </div>
@@ -273,16 +273,16 @@ function LandingPage({ onNavigate }) {
 
               <div>
                 <span className="section-label">
-                  DON'T MISS OUT
+                  SAVE YOUR SPOT
                 </span>
 
                 <h2>
-                  Upcoming Events
+                  Coming Up Soon
                 </h2>
               </div>
 
               <button className="view-all-button">
-                View All Events →
+                See Every Event →
               </button>
 
             </div>
@@ -315,7 +315,7 @@ function LandingPage({ onNavigate }) {
                   <div className="event-card-details">
 
                     <h3>
-                      Africa Tech Innovation Summit
+                      Kenya seven's Rugby
                     </h3>
 
                     <p>
@@ -325,11 +325,11 @@ function LandingPage({ onNavigate }) {
                     <div className="event-card-bottom">
 
                       <strong>
-                        KSh 1,500
+                        KSh 1000
                       </strong>
 
                       <span>
-                        450 going
+                        4590 attending
                       </span>
 
                     </div>
@@ -366,7 +366,7 @@ function LandingPage({ onNavigate }) {
                   <div className="event-card-details">
 
                     <h3>
-                      Business Networking Forum
+                      University of Eldoret 17th Graduation
                     </h3>
 
                     <p>
@@ -380,7 +380,7 @@ function LandingPage({ onNavigate }) {
                       </strong>
 
                       <span>
-                        180 going
+                        1800 attending
                       </span>
 
                     </div>
@@ -431,7 +431,7 @@ function LandingPage({ onNavigate }) {
                       </strong>
 
                       <span>
-                        1.2K going
+                        1.2K attending
                       </span>
 
                     </div>
@@ -449,6 +449,37 @@ function LandingPage({ onNavigate }) {
         </section>
 
 
+        {/* ================= EVENT VIBES CAROUSEL ================= */}
+        <section className="carousel-section">
+
+          <div className="landing-container">
+
+            <div className="carousel-section-header">
+              <span className="section-label">THE EXPERIENCE</span>
+              <h2>Concerts, Clubs, Drinks & More</h2>
+              <p>
+                Drag, scroll or use arrow keys to browse the vibe — then show up and live it.
+              </p>
+            </div>
+
+            <DepthCarousel
+              autoplay={true}
+              autoplayDelay={3500}
+              cardWidth={300}
+              cardHeight={400}
+              spread={95}
+              depth={230}
+              tilt={20}
+              blur={5}
+              falloff={0.22}
+              visibleCards={4}
+            />
+
+          </div>
+
+        </section>
+
+
         {/* ================= STATISTICS ================= */}
         <section className="statistics-section">
 
@@ -456,22 +487,22 @@ function LandingPage({ onNavigate }) {
 
             <div className="stat-item">
               <strong>10K+</strong>
-              <span>Active Attendees</span>
+              <span>People Taking Part</span>
             </div>
 
             <div className="stat-item">
               <strong>500+</strong>
-              <span>Events Created</span>
+              <span>Events Hosted</span>
             </div>
 
             <div className="stat-item">
               <strong>150+</strong>
-              <span>Event Organizers</span>
+              <span>Organizers on the Platform</span>
             </div>
 
             <div className="stat-item">
               <strong>25+</strong>
-              <span>Event Categories</span>
+              <span>Ways to Explore</span>
             </div>
 
           </div>
@@ -494,24 +525,24 @@ function LandingPage({ onNavigate }) {
                 <span>EVENT MANAGEMENT</span>
 
                 <h3>
-                  Everything you need
-                  to create amazing events.
+                  All the tools
+                  for events worth remembering.
                 </h3>
 
                 <div className="about-check">
-                  ✓ Easy event creation
+                  ✓ Simple event setup
                 </div>
 
                 <div className="about-check">
-                  ✓ Online registration
+                  ✓ Web-based sign-ups
                 </div>
 
                 <div className="about-check">
-                  ✓ Attendee management
+                  ✓ Guest coordination
                 </div>
 
                 <div className="about-check">
-                  ✓ Event analytics
+                  ✓ Attendance insights
                 </div>
 
               </div>
@@ -522,29 +553,27 @@ function LandingPage({ onNavigate }) {
             <div className="about-text">
 
               <span className="section-label">
-                WHY EVENT MANAGEMENT SYSTEM?
+                WHAT MAKES EVENT MANAGEMENT SYSTEM DIFFERENT?
               </span>
 
               <h2>
-                One Platform.
-                <span> Endless Possibilities.</span>
+                A Single Place.
+                <span> So Many Possibilities.</span>
               </h2>
 
               <p>
-                Event Management System makes event management simple.
-                Organizers can create and manage events,
-                while attendees can discover and register
-                for events they love.
+                Event Management System takes the hassle out of planning.
+                Hosts can publish and oversee gatherings, while guests
+                find and sign up for the events that excite them.
               </p>
 
               <p>
-                From planning to registration and
-                attendance tracking, everything is managed
-                from one convenient platform.
+                Handle the whole journey—from getting organized and accepting
+                registrations to keeping track of guests—all from one platform.
               </p>
 
               <button className="about-button">
-                Learn More →
+                Discover More →
               </button>
 
             </div>
@@ -560,21 +589,20 @@ function LandingPage({ onNavigate }) {
           <div className="landing-container cta-content">
 
             <span className="section-label">
-              FOR EVENT ORGANIZERS
+              MADE FOR EVENT HOSTS
             </span>
 
             <h2>
-              Ready to Bring Your Event
-              <span> to Life?</span>
+              Have an Idea for an Event?
+              <span> Make It Happen.</span>
             </h2>
 
             <p>
-              Create your event today and start connecting
-              with your audience.
+              Set up your event and start bringing your community together.
             </p>
 
             <button className="cta-button">
-              Create Your Event →
+              Start Planning →
             </button>
 
           </div>
@@ -600,8 +628,8 @@ function LandingPage({ onNavigate }) {
             </div>
 
             <p>
-              Your all-in-one platform for discovering,
-              creating and managing amazing events.
+              Find, host, and coordinate memorable experiences
+              with everything together in one place.
             </p>
 
           </div>
@@ -609,36 +637,36 @@ function LandingPage({ onNavigate }) {
 
           <div className="footer-column">
 
-            <h4>Platform</h4>
+            <h4>Explore</h4>
 
-            <a href="#events">Browse Events</a>
-            <a href="#categories">Categories</a>
-            <a href="#home">Create Event</a>
-            <a href="#home">Pricing</a>
-
-          </div>
-
-
-          <div className="footer-column">
-
-            <h4>Company</h4>
-
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
-            <a href="#home">Careers</a>
-            <a href="#home">Blog</a>
+            <a href="#events">Find Events</a>
+            <a href="#categories">Event Types</a>
+            <a href="#home">Host an Event</a>
+            <a href="#home">Plans & Pricing</a>
 
           </div>
 
 
           <div className="footer-column">
 
-            <h4>Support</h4>
+            <h4>About Us</h4>
 
-            <a href="#contact">Help Center</a>
-            <a href="#contact">Privacy Policy</a>
-            <a href="#contact">Terms of Service</a>
-            <a href="#contact">FAQs</a>
+            <a href="#about">Who We Are</a>
+            <a href="#contact">Reach Out</a>
+            <a href="#home">Join Our Team</a>
+            <a href="#home">Latest News</a>
+
+          </div>
+
+
+          <div className="footer-column">
+
+            <h4>We're Here to Help</h4>
+
+            <a href="#contact">Support Center</a>
+            <a href="#contact">Privacy Information</a>
+            <a href="#contact">Terms & Conditions</a>
+            <a href="#contact">Common Questions</a>
 
           </div>
 

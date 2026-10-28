@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { authRequest } from '../../../authApi'
+import ThemeToggle from '../../../components/ThemeToggle'
 import './SignUp.css'
 
-function SignUp({ onNavigate }) {
+function SignUp({ onNavigate, theme, onToggleTheme }) {
 	const [showPassword, setShowPassword] = useState(false)
 	const [message, setMessage] = useState('')
 	const [isSubmitting, setIsSubmitting] = useState(false)
@@ -44,9 +45,12 @@ function SignUp({ onNavigate }) {
 
 			<section className="auth-panel">
 				<div className="auth-form-wrap">
-					<button className="auth-back-button" type="button" onClick={() => onNavigate('landing')}>
-						<span aria-hidden="true">&larr;</span> Back to landing
-					</button>
+					<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '34px' }}>
+						<button className="auth-back-button" type="button" onClick={() => onNavigate('landing')} style={{ marginBottom: 0 }}>
+							<span aria-hidden="true">&larr;</span> Back to landing
+						</button>
+						<ThemeToggle theme={theme} onToggle={onToggleTheme} compact={true} />
+					</div>
 					<p className="auth-eyebrow">Get started</p>
 					<h2>Create your account</h2>
 					<p className="auth-subtitle">It only takes a minute to join Evently.</p>

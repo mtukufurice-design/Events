@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import ThemeToggle from '../../components/ThemeToggle'
 import './UserDashboard.css'
 
 const events = [
@@ -42,7 +43,7 @@ const recommendedEvents = [
   { id: 5, title: 'Build for Good Hackathon', category: 'Technology', date: '15 Nov', venue: 'iHub, Senteu Plaza', color: 'blue' },
 ]
 
-function UserDashboard({ onNavigate, onLogout, userEmail }) {
+function UserDashboard({ onNavigate, onLogout, userEmail, theme, onToggleTheme }) {
   const [activeSection, setActiveSection] = useState('Overview')
   const [eventFilter, setEventFilter] = useState('All')
   const [query, setQuery] = useState('')
@@ -111,6 +112,7 @@ function UserDashboard({ onNavigate, onLogout, userEmail }) {
         <header className="dashboard-topbar">
           <div className="breadcrumb"><span>My space</span><span aria-hidden="true">/</span><strong>{activeSection}</strong></div>
           <div className="topbar-actions">
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
             <label className="dashboard-search">
               <span aria-hidden="true">⌕</span>
               <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search your events" aria-label="Search your events" />

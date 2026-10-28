@@ -1,0 +1,481 @@
+.evently-music-player {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  padding: 16px;
+  border: 1px solid rgba(53, 37, 27, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 35px rgba(53, 37, 27, 0.18);
+  color: #35251b;
+  font-family: inherit;
+  backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.evently-music-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.evently-music-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.evently-music-details {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.evently-track-counter {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #24799f;
+  margin-bottom: 2px;
+}
+
+.evently-music-icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #e3f4fc;
+  color: #24799f;
+  font-size: 13px;
+  box-shadow: 0 1px 4px rgba(36, 121, 159, 0.15);
+}
+
+.evently-music-title {
+  margin: 0 0 2px;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.evently-music-subtitle {
+  margin: 0;
+  color: #766b62;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.evently-quick-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.evently-nav-btn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: 1px solid #e1e8ed;
+  background: #f7fafc;
+  color: #35251b;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.evently-nav-btn:hover {
+  background: #e3f4fc;
+  border-color: #24799f;
+  color: #1b5f80;
+  transform: translateY(-1px);
+}
+
+.evently-nav-btn.playlist-toggle-btn.is-active {
+  background: #24799f;
+  border-color: #24799f;
+  color: #ffffff;
+}
+
+.evently-music-playlist {
+  margin-bottom: 12px;
+  border-radius: 10px;
+  background: rgba(244, 248, 251, 0.6);
+  padding: 8px;
+  border: 1px solid #e5ebee;
+}
+
+.evently-playlist-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #766b62;
+  margin-bottom: 8px;
+  padding: 0 2px;
+}
+
+.evently-genre-badge {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #e3f4fc;
+  color: #24799f;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.evently-playlist-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 160px;
+  overflow-y: auto;
+  padding-right: 2px;
+  scrollbar-width: thin;
+}
+
+.evently-playlist-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 9px;
+  border-radius: 8px;
+  border: 1px solid #e1e8ed;
+  background: #ffffff;
+  color: #35251b;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.evently-playlist-btn:hover {
+  background: #edf5fa;
+  border-color: #24799f;
+}
+
+.evently-playlist-btn.is-active {
+  background: #e3f4fc;
+  border-color: #24799f;
+  color: #1b5f80;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(36, 121, 159, 0.15);
+}
+
+.playlist-btn-status {
+  font-size: 10px;
+  color: #24799f;
+  flex-shrink: 0;
+  width: 12px;
+  text-align: center;
+}
+
+.playlist-btn-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  flex: 1;
+}
+
+.playlist-btn-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-size: 11.5px;
+}
+
+.playlist-btn-artist {
+  font-size: 10px;
+  color: #766b62;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.evently-music-toggle {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #35251b;
+  color: white;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.evently-music-toggle:hover {
+  background: #4b382c;
+  transform: translateY(-1px);
+}
+
+.evently-music-toggle:focus-visible,
+.evently-music-link:focus-visible,
+.evently-playlist-btn:focus-visible,
+.evently-nav-btn:focus-visible {
+  outline: 2px solid #24799f;
+  outline-offset: 2px;
+}
+
+.evently-youtube-player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.evently-music-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #24799f;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.evently-music-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .evently-music-player {
+    right: 12px;
+    bottom: 12px;
+    width: min(320px, calc(100vw - 24px));
+    padding: 13px;
+  }
+}
+
+/* ==========================================================================
+   BLACK, BLUE & RED THEME FOR BACKGROUND MUSIC
+   ========================================================================== */
+[data-theme='black-blue-red'] .evently-music-player {
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background: rgba(7, 12, 23, 0.95);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.88), 0 0 25px rgba(37, 99, 235, 0.2);
+  color: #f8fafc;
+}
+
+[data-theme='black-blue-red'] .evently-music-icon {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(239, 68, 68, 0.25));
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.25);
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+  border-radius: 7px;
+}
+
+[data-theme='black-blue-red'] .evently-track-counter {
+  color: #ef4444;
+}
+
+[data-theme='black-blue-red'] .evently-music-title {
+  color: #ffffff;
+}
+
+[data-theme='black-blue-red'] .evently-music-subtitle {
+  color: #94a3b8;
+}
+
+[data-theme='black-blue-red'] .evently-nav-btn {
+  background: #0d1527;
+  border-color: #1a2742;
+  color: #cbd5e1;
+}
+
+[data-theme='black-blue-red'] .evently-nav-btn:hover {
+  background: #132244;
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+[data-theme='black-blue-red'] .evently-nav-btn.playlist-toggle-btn.is-active {
+  background: rgba(37, 99, 235, 0.3);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+}
+
+[data-theme='black-blue-red'] .evently-music-playlist {
+  background: rgba(13, 21, 39, 0.65);
+  border-color: #1a2742;
+}
+
+[data-theme='black-blue-red'] .evently-playlist-heading {
+  color: #94a3b8;
+}
+
+[data-theme='black-blue-red'] .evently-genre-badge {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+[data-theme='black-blue-red'] .evently-playlist-btn {
+  background: #0d1527;
+  border-color: #1a2742;
+  color: #cbd5e1;
+}
+
+[data-theme='black-blue-red'] .evently-playlist-btn:hover {
+  background: #111e38;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+[data-theme='black-blue-red'] .evently-playlist-btn.is-active {
+  background: rgba(37, 99, 235, 0.24);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+[data-theme='black-blue-red'] .evently-playlist-btn .playlist-btn-artist {
+  color: #64748b;
+}
+
+[data-theme='black-blue-red'] .evently-playlist-btn.is-active .playlist-btn-artist {
+  color: #94a3b8;
+}
+
+[data-theme='black-blue-red'] .evently-playlist-btn.is-active .playlist-btn-status {
+  color: #ef4444;
+  text-shadow: 0 0 8px #ef4444;
+}
+
+[data-theme='black-blue-red'] .evently-music-toggle {
+  background: linear-gradient(135deg, #2563eb 0%, #ef4444 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35);
+}
+
+[data-theme='black-blue-red'] .evently-music-toggle:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #dc2626 100%);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.55), 0 0 15px rgba(37, 99, 235, 0.35);
+}
+
+[data-theme='black-blue-red'] .evently-music-link {
+  color: #38bdf8;
+}
+
+[data-theme='black-blue-red'] .evently-music-link:hover {
+  color: #ef4444;
+}
+
+[data-theme='black-blue-red'] .evently-music-toggle:focus-visible,
+[data-theme='black-blue-red'] .evently-music-link:focus-visible,
+[data-theme='black-blue-red'] .evently-playlist-btn:focus-visible,
+[data-theme='black-blue-red'] .evently-nav-btn:focus-visible {
+  outline-color: #38bdf8;
+}
+
+/* ==========================================================================
+   MINIMIZED FLOATING MUSIC BUTTON
+   ========================================================================== */
+.evently-music-minimized-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 37, 27, 0.16);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 24px rgba(53, 37, 27, 0.15);
+  color: #35251b;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 260px;
+}
+
+.evently-music-minimized-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(53, 37, 27, 0.22);
+}
+
+.minimized-music-icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e3f4fc;
+  color: #24799f;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.minimized-music-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.minimized-expand-icon {
+  font-size: 9px;
+  color: #766b62;
+  flex-shrink: 0;
+}
+
+[data-theme='black-blue-red'] .evently-music-minimized-btn {
+  background: rgba(7, 12, 23, 0.95);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(37, 99, 235, 0.2);
+  color: #f8fafc;
+}
+
+[data-theme='black-blue-red'] .evently-music-minimized-btn:hover {
+  border-color: #ef4444;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+[data-theme='black-blue-red'] .minimized-music-icon {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(239, 68, 68, 0.3));
+  color: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+[data-theme='black-blue-red'] .minimized-expand-icon {
+  color: #38bdf8;
+}
